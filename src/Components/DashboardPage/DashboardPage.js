@@ -20,7 +20,21 @@ class DashboardPage extends React.Component{
     render() {
         return(
             <div>
+                <div className="filter-section">
+                    <div className="filter-menu">
+                        <p>Filter: </p>
+                        <button className="filter-button">PRICE</button>
+                        <button className="filter-button">GALACTIC</button>
+                    </div>
+                    <img src="dahsboard-filter-image.png" alt="" className="filter-image" />
+                </div>
+                
                 <PlaceList placeListDetails={this.state.placeList}/>
+                <div className="go-home__section">
+                    <img className="go-home-image" src="dashboard-go-home-image.png" alt="" />
+                    <button className="go-home__button">GO HOME</button>
+                </div>
+                
             </div>
         );
     }

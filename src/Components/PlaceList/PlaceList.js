@@ -28,11 +28,11 @@ class PlaceList extends React.Component {
         let {placeListDetails} = this.props;
         return (
             <div className="placeList">
-                <div>
-                    <label>Filter by City: </label>
+                {/* <div> */}
+                    {/* <label>Filter by City: </label> */}
                     {/* {this.state.filteredCity} */}
-                    <input type="text" value={this.state.filteredCity} onChange={this.handleInput}/>
-                </div>
+                    {/* <input type="text" value={this.state.filteredCity} onChange={this.handleInput}/> */}
+                {/* </div> */}
 
                 {/* <div>
                     <label>Filter by Price: </label>
