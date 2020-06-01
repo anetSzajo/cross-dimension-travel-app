@@ -1,7 +1,7 @@
 import React from 'react';
-import Place from './Place';
+import Place from '../Place/Place';
 
-import './place.css';
+import './placeList.css';
 
 
 class PlaceList extends React.Component {
@@ -20,7 +20,7 @@ class PlaceList extends React.Component {
         this.setState(
             {
                 filteredCity: event.target.value,
-                filteredPrice: event.target.value
+                // filteredPrice: event.target.value
             });
     }
 
@@ -29,15 +29,16 @@ class PlaceList extends React.Component {
         return (
             <div className="placeList">
                 <div>
-                <label>Filter by City: </label>
-                {/* {this.state.filteredCity} */}
-                <input type="text" value={this.state.filteredCity} onChange={this.handleInput}/>
+                    <label>Filter by City: </label>
+                    {/* {this.state.filteredCity} */}
+                    <input type="text" value={this.state.filteredCity} onChange={this.handleInput}/>
                 </div>
-                <div>
-                <label>Filter by Price: </label>
-                {/* {this.state.filteredPrice} */}
-                <input type="text" value={this.state.filteredPrice} onChange={this.handleInput}/>
-                </div>
+
+                {/* <div>
+                    <label>Filter by Price: </label>
+                    {/* {this.state.filteredPrice} */}
+                    {/* <input type="text" value={this.state.filteredPrice} onChange={this.handleInput}/> */}
+                {/* </div> */}
                 
                 {placeListDetails.filter(place =>
                 this.state.filteredCity ? place.city === this.state.filteredCity : true
@@ -54,7 +55,7 @@ class PlaceList extends React.Component {
                     />}
                 )}
 
-                {placeListDetails.filter(place =>
+                {/* {placeListDetails.filter(place =>
                 this.state.filteredPrice ? place.price === this.state.filteredPrice: true
                ).map((place, index) => {
                     return <Place
@@ -67,7 +68,7 @@ class PlaceList extends React.Component {
                         category={place.category}
                         address={place.address}
                     />}
-                )}
+                )} */}
             </div>
         )
     }

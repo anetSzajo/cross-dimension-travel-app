@@ -1,0 +1,9 @@
+.place{
+    background: rgba(240, 240, 240, 0.58);
+    border-radius: 33px;
+    padding: 2rem;
+    text-align: left;
+    width: 70%;
+    margin: 1rem auto;
+    word-break: break-word;
+}

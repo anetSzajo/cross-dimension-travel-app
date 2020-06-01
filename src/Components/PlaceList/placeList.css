@@ -1,0 +1,4 @@
+.placeList{
+    display: flex;
+    flex-direction: column;
+}
