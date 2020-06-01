@@ -6,13 +6,14 @@ function Place(props) {
 
     return (
         <div className="place">
-            <p>Title: {props.title}</p>
-            <p>Description: {props.description}</p>
-            <p>Foto URL: {props.foto_url}</p>
-            <p>Price: {props.price}</p>
-            <p>City: {props.city}</p>
-            <p>Category: {props.category}</p>
-            <p>Address: {props.address}</p>
+            <p>ID: {props.id}</p>
+            <p>NAME: {props.name}</p>
+            <p>TYPE: {props.type}</p>
+            <p>DIMENSION: {props.dimension}</p>
+            <p>PRICE: {props.price}</p>
+            <p>RESIDENTS: {props.residents}</p>
+            <p>URL: {props.url}</p>
+            <p>CREATED: {props.created}</p>
         </div>
     )
 }

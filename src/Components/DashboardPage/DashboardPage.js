@@ -10,7 +10,7 @@ class DashboardPage extends React.Component{
     }
 
     componentDidMount() {
-        fetch('./database.json')
+        fetch('database.json')
         .then(response => response.json())
         .then(data => this.setState({
             placeList: data
@@ -26,7 +26,7 @@ class DashboardPage extends React.Component{
                         <button className="filter-button">PRICE</button>
                         <button className="filter-button">GALACTIC</button>
                     </div>
-                    <img src="dahsboard-filter-image.png" alt="" className="filter-image" />
+                    <img src="dashboard-filter-image.png" alt="" className="filter-image" />
                 </div>
                 
                 <PlaceList placeListDetails={this.state.placeList}/>

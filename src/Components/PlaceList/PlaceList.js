@@ -9,8 +9,7 @@ class PlaceList extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            filteredCity: '',
-            filteredPrice: ''
+            filteredDimension: '',
         };
         this.handleInput = this.handleInput.bind(this);
 
@@ -19,8 +18,7 @@ class PlaceList extends React.Component {
     handleInput(event){
         this.setState(
             {
-                filteredCity: event.target.value,
-                // filteredPrice: event.target.value
+                filteredDimension: event.target.value,
             });
     }
 
@@ -28,47 +26,25 @@ class PlaceList extends React.Component {
         let {placeListDetails} = this.props;
         return (
             <div className="placeList">
-                {/* <div> */}
-                    {/* <label>Filter by City: </label> */}
-                    {/* {this.state.filteredCity} */}
-                    {/* <input type="text" value={this.state.filteredCity} onChange={this.handleInput}/> */}
-                {/* </div> */}
+                <div>
+                    <input type="text" value={this.state.filteredDimension} onChange={this.handleInput} />
+                </div>
 
-                {/* <div>
-                    <label>Filter by Price: </label>
-                    {/* {this.state.filteredPrice} */}
-                    {/* <input type="text" value={this.state.filteredPrice} onChange={this.handleInput}/> */}
-                {/* </div> */}
-                
                 {placeListDetails.filter(place =>
-                this.state.filteredCity ? place.city === this.state.filteredCity : true
+                this.state.filteredDimension ? place.city === this.state.filteredDimension : true
                ).map((place, index) => {
                     return <Place
                         key={`place-${index}`}
-                        title={place.title}
-                        description={place.description}
-                        foto_url={place.foto_url}
+                        id={place.id}
+                        name={place.name}
+                        type={place.type}
+                        dimension={place.dimension}
                         price={place.price}
-                        city={place.city}
-                        category={place.category}
-                        address={place.address}
-                    />}
-                )}
-
-                {/* {placeListDetails.filter(place =>
-                this.state.filteredPrice ? place.price === this.state.filteredPrice: true
-               ).map((place, index) => {
-                    return <Place
-                        key={`place-${index}`}
-                        title={place.title}
-                        description={place.description}
-                        foto_url={place.foto_url}
-                        price={place.price}
-                        city={place.city}
-                        category={place.category}
-                        address={place.address}
-                    />}
-                )} */}
+                        residents={place.residents.length}
+                        url={place.url}
+                        created={place.created}
+                        />
+                    })}
             </div>
         )
     }
