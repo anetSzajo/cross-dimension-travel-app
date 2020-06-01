@@ -1,0 +1,44 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-panel{
+    width: 332px;
+    height: 246px;
+    margin: 2rem auto;
+    left: 22px;
+    top: 38px;
+    background: rgba(240, 240, 240, 0.58);
+    border-radius: 33px;
+}
+
+.welcome-panel h1 {
+    width: 293px;
+    height: 132px;
+    left: 40px;
+    top: 65px;
+    font-family: Sanchez;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 159.8%;
+    padding: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4F4F4F;
+}
+
+.travel-button{
+    width: 67px;
+    height: 28px;
+    background: rgba(245, 8, 94, 0.53);
+}
+
+.home-page img{
+    width: 324px;
+    height: 355px;
+    border-radius: 23px;
+}
