@@ -1,18 +1,18 @@
 import React from 'react';
 
-
+import './place.css';
 
 function Place(props) {
 
     return (
         <div className="place">
-            Title: {props.title},
-            Description: {props.description},
-            Foto URL: {props.foto_url},
-            Price: {props.price},
-            City: {props.city},
-            Category: {props.category},
-            Address: {props.address}
+            <p>Title: {props.title}</p>
+            <p>Description: {props.description}</p>
+            <p>Foto URL: {props.foto_url}</p>
+            <p>Price: {props.price}</p>
+            <p>City: {props.city}</p>
+            <p>Category: {props.category}</p>
+            <p>Address: {props.address}</p>
         </div>
     )
 }
