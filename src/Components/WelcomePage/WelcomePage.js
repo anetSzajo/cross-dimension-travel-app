@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
-
-// import AboutApp from '../AboutApp/AboutApp';
-// import DashboardPage from '../DashboardPage/DashboardPage';
+import { Link } from 'react-router-dom';
 
 import './welcomePage.scss';
 

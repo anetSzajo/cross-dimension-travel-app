@@ -1,26 +1,29 @@
 @import '../button.scss';
 
+body{
+    font: $font-family;
+}
+
 .about-app{
     width: 80%;
-    padding: 10px;
+    padding: 10px 20px;
     text-align: justify;
     margin: 1rem auto;
     background:  rgba(240, 240, 240, 0.58);
 }
 .about-app h1{
     text-align: center;
+    color: $button-background;
 }
 
-.go-home__button{
-    // width: $button-width;
-    // height: $button-height;
-    // margin: auto 1rem auto 14rem;
-    background: $button-background;
-    margin: auto 1rem 2rem 0;
-    color: $button-color;;
-}
+// .button{
+//     width: $button-width;
+//     height: $button-height;
+//     background: $button-background;
+//     border:$button-border;
 
-.link{
-    text-decoration: none;
-    color: $button-color;
-}
+//     a{
+//         text-decoration: none;
+//         color: $button-color;
+//     }
+// }
