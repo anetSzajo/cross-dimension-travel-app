@@ -10,29 +10,32 @@ class PlaceList extends React.Component {
         super(props);
         this.state = {
             filteredDimension: '',
+            filteredPriceFrom: '',
+            filteredPriceTo: ''
         };
-        this.handleInput = this.handleInput.bind(this);
 
     }
 
-    handleInput(event){
-        this.setState(
-            {
-                filteredDimension: event.target.value,
-            });
-    }
+    // handleDimensionChange = (event) => {
+    //     this.setState(
+    //         {
+    //             filteredDimension: event.target.value
+    //         });
+    // }
+    // filter(place =>
+    //     this.state.filteredDimension ? place.dimension.toUpperCase().includes(this.state.filteredDimension.toUpperCase()) : true
+    //    )
+
 
     render() {
         let {placeListDetails} = this.props;
+        console.log(this.props.filterBy)
         return (
             <div className="placeList">
-                <div>
-                    <input type="text" value={this.state.filteredDimension} onChange={this.handleInput} />
-                </div>
 
-                {placeListDetails.filter(place =>
-                this.state.filteredDimension ? place.city === this.state.filteredDimension : true
-               ).map((place, index) => {
+
+                {placeListDetails.filter((place) => true)
+                .map((place, index) => {
                     return <Place
                         key={`place-${index}`}
                         id={place.id}
@@ -44,7 +47,7 @@ class PlaceList extends React.Component {
                         url={place.url}
                         created={place.created}
                         />
-                    })}
+                })}
             </div>
         )
     }
