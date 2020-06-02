@@ -1,3 +1,5 @@
+@import '../button.scss';
+
 .filter-section{
     display: flex;
     flex-direction: row;
@@ -58,7 +60,9 @@
 }
 
 .go-home__button{
-    background: rgba(245, 8, 94, 0.53);
+    background: $button-background;
+    color: $button-color;
+    width: $button-width;
+    height: $button-height;
     margin: auto 1rem 2rem 0;
-    color: #4F4F4F;
 }

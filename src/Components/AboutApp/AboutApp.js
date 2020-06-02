@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './aboutApp.css';
+import './aboutApp.scss';
 
 function AboutApp() {
     return(
@@ -11,7 +11,7 @@ function AboutApp() {
                 Incididunt veniam brisket tail dolore. Sunt filet mignon jerky anim. Brisket elit salami, consectetur fatback aliquip short ribs. Pariatur est porchetta shank. Pork belly anim reprehenderit mollit qui. 
                 Leberkas porchetta filet mignon boudin eu, elit shank burgdoggen cupidatat jowl. Eu elit excepteur, burgdoggen drumstick chicken leberkas eiusmod aute corned beef chislic capicola tempor prosciutto. Andouille esse brisket anim elit eiusmod ground round fatback ham hock meatball labore. Est consequat non chicken. Shoulder salami cupim, prosciutto velit corned beef burgdoggen occaecat incididunt cow chicken short ribs jerky duis. Tail velit ut non jowl pork loin. Ground round pig pastrami ut duis consequat chicken porchetta ex.
             </p>
-            <button className="go-home__button"><Link to="/">GO HOME</Link></button>
+            <button className="go-home__button"><Link to="/" className="link">GO HOME</Link></button>
         </div>
     )
 }

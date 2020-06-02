@@ -1,3 +1,5 @@
+@import '../button.scss';
+
 .home-page{
     display: flex;
     flex-direction: column;
@@ -31,11 +33,32 @@
     color: #4F4F4F;
 }
 
-.travel-button{
-    width: 67px;
-    height: 28px;
-    background: rgba(245, 8, 94, 0.53);
+.buttons-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.button{
+    width: $button-width;
+    height: $button-height;
+    background: $about-app-button-background;
+    margin: $button-margin;
+    border:$button-border;
+
+    a{
+        text-decoration: none;
+        word-wrap: break-word;
+        color: $button-color;
+        word-break: break-all;
+    }
+}
+
+.travel-button{
+    background: $button-background;
+}
+
 
 .home-page img{
     width: 324px;

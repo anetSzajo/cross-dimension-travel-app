@@ -1,0 +1,26 @@
+@import '../button.scss';
+
+.about-app{
+    width: 80%;
+    padding: 10px;
+    text-align: justify;
+    margin: 1rem auto;
+    background:  rgba(240, 240, 240, 0.58);
+}
+.about-app h1{
+    text-align: center;
+}
+
+.go-home__button{
+    // width: $button-width;
+    // height: $button-height;
+    // margin: auto 1rem auto 14rem;
+    background: $button-background;
+    margin: auto 1rem 2rem 0;
+    color: $button-color;;
+}
+
+.link{
+    text-decoration: none;
+    color: $button-color;
+}
