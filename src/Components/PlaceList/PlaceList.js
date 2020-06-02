@@ -6,7 +6,7 @@ import './placeList.css';
 
 class PlaceList extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             filteredDimension: '',
@@ -16,38 +16,24 @@ class PlaceList extends React.Component {
 
     }
 
-    // handleDimensionChange = (event) => {
-    //     this.setState(
-    //         {
-    //             filteredDimension: event.target.value
-    //         });
-    // }
-    // filter(place =>
-    //     this.state.filteredDimension ? place.dimension.toUpperCase().includes(this.state.filteredDimension.toUpperCase()) : true
-    //    )
-
-
     render() {
-        let {placeListDetails} = this.props;
-        console.log(this.props.filterBy)
+        let { placeListDetails } = this.props;
         return (
             <div className="placeList">
-
-
-                {placeListDetails.filter((place) => true)
-                .map((place, index) => {
-                    return <Place
-                        key={`place-${index}`}
-                        id={place.id}
-                        name={place.name}
-                        type={place.type}
-                        dimension={place.dimension}
-                        price={place.price}
-                        residents={place.residents.length}
-                        url={place.url}
-                        created={place.created}
+                {placeListDetails.filter((place) => this.props.filterBy(place))
+                    .map((place, index) => {
+                        return <Place
+                            key={`place-${index}`}
+                            id={place.id}
+                            name={place.name}
+                            type={place.type}
+                            dimension={place.dimension}
+                            price={place.price}
+                            residents={place.residents.length}
+                            url={place.url}
+                            created={place.created}
                         />
-                })}
+                    })}
             </div>
         )
     }

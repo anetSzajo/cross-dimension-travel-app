@@ -7,20 +7,32 @@ class FilterByPrice extends React.Component {
         to: ''
     }
 
-    constructor(props) {
-        super(props)
-        this.handlePriceChange = this.handleChange.bind(this);
+    betweenPriceFilter = (place) => place.price > this.state.from && place.price < this.state.to
+
+
+// jest zresetujesz jedno pole, a drugie jest uzupelnione to tak usunie wszystkie filtery
+// jak dasz spacje to filtruje niepotrzebnie
+// trzeba dodac opcję żeby przy removeFilter informował jaki to jest filtr, zeby go mógł usunąć parent
+    updateFilter = (event) => {
+        if (event.target.value === '') {
+            this.removeFilter(event)
+        } else {
+            this.addFilter(event)
+        }
     }
 
-    createFilter() {
-        return (place) => (place.price > this.state.from) && (place.price < this.state.to)
+    addFilter(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        }, this.props.onAddFilter(this.betweenPriceFilter)
+        );
+
     }
 
-    handlePriceChange = (event) => {
-        this.setState(
-            {
-                [event.target.name]: event.target.value,
-            }, () => this.props.onAddFilter(this.createFilter())
+    removeFilter(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        }, this.props.onRemoveFilter()
         );
     }
 
@@ -29,9 +41,9 @@ class FilterByPrice extends React.Component {
         return (
             <div>
                 From:
-                <input type="text" name="from" value={this.state.filteredPriceFrom} onChange={this.handlePriceChange} />
+                <input type="text" name="from" value={this.state.from} onChange={this.updateFilter} />
                 To:
-                <input type="text" name="to" value={this.state.filteredPriceTo} onChange={this.handlePriceChange} />
+                <input type="text" name="to" value={this.state.to} onChange={this.updateFilter} />
             </div>
 
         )
