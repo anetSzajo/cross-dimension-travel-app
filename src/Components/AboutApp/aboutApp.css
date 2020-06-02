@@ -1,0 +1,16 @@
+.about-app{
+    width: 80%;
+    padding: 21px;
+    text-align: justify;
+    margin: 1rem auto;
+    background:  rgba(240, 240, 240, 0.58);
+}
+.about-app h1{
+    text-align: center;
+}
+
+.go-home__button{
+    background: rgba(245, 8, 94, 0.53);
+    margin: auto 1rem 2rem 0;
+    color: #4F4F4F;
+}
