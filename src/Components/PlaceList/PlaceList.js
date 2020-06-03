@@ -6,21 +6,20 @@ import './placeList.css';
 
 class PlaceList extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            filteredDimension: '',
-            filteredPriceFrom: '',
-            filteredPriceTo: ''
-        };
-
+    filterByAll(filters) {
+        return (place) => {
+            return filters.map(filter => filter(place))
+                        .every(result => !!result)
+        }
     }
 
     render() {
+        console.log(this.props.filterBy)
+
         let { placeListDetails } = this.props;
         return (
             <div className="placeList">
-                {placeListDetails.filter((place) => this.props.filterBy(place))
+                {placeListDetails.filter((place) => this.filterByAll(this.props.filterBy)(place))
                     .map((place, index) => {
                         return <Place
                             key={`place-${index}`}

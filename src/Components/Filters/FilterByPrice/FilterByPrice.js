@@ -32,7 +32,7 @@ class FilterByPrice extends React.Component {
     removeFilter(event) {
         this.setState({
             [event.target.name]: event.target.value
-        }, this.props.onRemoveFilter()
+        }, this.props.onRemoveFilter(this.betweenPriceFilter)
         );
     }
 

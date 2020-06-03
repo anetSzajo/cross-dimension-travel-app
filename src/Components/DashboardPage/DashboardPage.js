@@ -6,20 +6,22 @@ import './dashboardPage.css';
 
 class DashboardPage extends React.Component {
 
+    defaultFilter = () => true
+
     state = {
         placeList: [],
-        filter: () => true
+        filter: [this.defaultFilter]
     }
 
     addFilter = (newFilter) => {
         this.setState(
-            { filter: newFilter }
+            { filter: [...this.state.filter, newFilter] }
         )
     }
 
-    removeFilter = () => {
+    removeFilter = (filter) => {
         this.setState(
-            { filter: () => true }
+            { filter: this.state.filter.filter(f => f != filter) }
         )
     }
 
