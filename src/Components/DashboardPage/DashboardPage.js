@@ -4,6 +4,7 @@ import FilterByPrice from '../Filters/FilterByPrice/FilterByPrice';
 import PlaceList from '../PlaceList/PlaceList';
 import './dashboardPage.css';
 import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 class DashboardPage extends React.Component {
 
@@ -11,18 +12,18 @@ class DashboardPage extends React.Component {
 
     state = {
         placeList: [],
-        filter: [this.defaultFilter]
+        filterArray: [this.defaultFilter]
     }
 
-    addFilter = (newFilter) => {
+    addFilter = (filterToAdd) => {
         this.setState(
-            { filter: [...this.state.filter, newFilter] }
+            { filterArray: [...this.state.filterArray, filterToAdd] }
         )
     }
 
-    removeFilter = (filter) => {
+    removeFilter = (filterToRemove) => {
         this.setState(
-            { filter: this.state.filter.filter(f => f != filter) }
+            { filterArray: this.state.filterArray.filter(f => f !== filterToRemove) }
         )
     }
 
@@ -32,6 +33,20 @@ class DashboardPage extends React.Component {
             .then(data => this.setState({
                 placeList: data
             }))
+    }
+
+    filteredPlaceList = (filters) => {
+        return this.state.placeList.filter(
+            (place) => this.filterByAll(filters)(place)
+        )
+
+    }
+
+    filterByAll(filters) {
+        return (place) => {
+            return filters.map(filter => filter(place))
+                .every(result => !!result)
+        }
     }
 
 
@@ -48,7 +63,7 @@ class DashboardPage extends React.Component {
                     </div>
                     <img src="dashboard-filter-image.png" alt="" className="filter-image" />
                 </div>
-                <PlaceList placeListDetails={this.state.placeList} filterBy={this.state.filter} />
+                <PlaceList placeListDetails={this.filteredPlaceList(this.state.filterArray)} />
                 <div className="go-home__section">
                     <img className="go-home-image" src="dashboard-go-home-image.png" alt="" />
                     <button className="go-home__button">GO HOME</button>
