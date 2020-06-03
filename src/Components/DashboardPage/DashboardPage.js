@@ -3,6 +3,7 @@ import React from 'react';
 import FilterByPrice from '../Filters/FilterByPrice/FilterByPrice';
 import PlaceList from '../PlaceList/PlaceList';
 import './dashboardPage.css';
+import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
 
 class DashboardPage extends React.Component {
 
@@ -39,6 +40,7 @@ class DashboardPage extends React.Component {
                     <div className="filter-menu">
                         <p>Filter: </p>
                         <FilterByPrice onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
+                        <FilterByDimension onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
                         <button className="filter-button">PRICE</button>
                         <button className="filter-button">DIMENSION</button>
                     </div>

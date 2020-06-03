@@ -26,7 +26,6 @@ class FilterByPrice extends React.Component {
             [event.target.name]: event.target.value
         }, this.props.onAddFilter(this.betweenPriceFilter)
         );
-
     }
 
     removeFilter(event) {
