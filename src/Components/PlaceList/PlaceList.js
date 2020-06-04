@@ -1,6 +1,5 @@
 import React from 'react';
 import Place from '../Place/Place';
-
 import './placeList.css';
 
 

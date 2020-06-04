@@ -1,30 +1,17 @@
 import React from 'react';
-
+import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
 import FilterByPrice from '../Filters/FilterByPrice/FilterByPrice';
 import PlaceList from '../PlaceList/PlaceList';
 import './dashboardPage.css';
-import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
-import { isCompositeComponent } from 'react-dom/test-utils';
+
 
 class DashboardPage extends React.Component {
 
-    defaultFilter = () => true
+    defaultFilter = {filterName: 'default', filter: () => true}
 
     state = {
         placeList: [],
         filterArray: [this.defaultFilter]
-    }
-
-    addFilter = (filterToAdd) => {
-        this.setState(
-            { filterArray: [...this.state.filterArray, filterToAdd] }
-        )
-    }
-
-    removeFilter = (filterToRemove) => {
-        this.setState(
-            { filterArray: this.state.filterArray.filter(f => f !== filterToRemove) }
-        )
     }
 
     componentDidMount() {
@@ -35,20 +22,32 @@ class DashboardPage extends React.Component {
             }))
     }
 
+    addFilter = (filterToAdd) => {
+        this.setState(
+            { filterArray: [...this.state.filterArray.filter(f => f.filterName !== filterToAdd.filterName), filterToAdd] }
+        )
+    }
+
+    removeFilter = (filterToRemove) => {
+        this.setState(
+            { filterArray: this.state.filterArray.filter(filter => filter.filterName !== filterToRemove.filterName) }
+        )
+    }
+
+
     filteredPlaceList = (filters) => {
         return this.state.placeList.filter(
             (place) => this.filterByAll(filters)(place)
         )
-
     }
 
     filterByAll(filters) {
         return (place) => {
-            return filters.map(filter => filter(place))
+            return filters.map(filter => {
+                return filter.filter(place)})
                 .every(result => !!result)
         }
     }
-
 
     render() {
         return (

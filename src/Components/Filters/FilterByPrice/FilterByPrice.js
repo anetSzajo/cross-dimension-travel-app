@@ -1,4 +1,5 @@
 import React from 'react';
+import betweenRange from './Filter';
 
 class FilterByPrice extends React.Component {
 
@@ -7,13 +8,18 @@ class FilterByPrice extends React.Component {
         to: ''
     }
 
-    betweenPriceFilter = (place) => place.price > this.state.from && place.price < this.state.to
 
+    betweenPriceFilter = (from, to) => {
+        return {
+            filterName: 'FilterByPrice', filter: betweenRange(from, to)
+        }
+    }
 
-// jest zresetujesz jedno pole, a drugie jest uzupelnione to tak usunie wszystkie filtery
-// jak dasz spacje to filtruje niepotrzebnie
-// trzeba dodac opcję żeby przy removeFilter informował jaki to jest filtr, zeby go mógł usunąć parent
+    // jest zresetujesz jedno pole, a drugie jest uzupelnione to tak usunie wszystkie filtery
+    // jak dasz spacje to filtruje niepotrzebnie
+    // trzeba dodac opcję żeby przy removeFilter informował jaki to jest filtr, zeby go mógł usunąć parent
     updateFilter = (event) => {
+        console.log(this)
         if (event.target.value === '') {
             this.removeFilter(event)
         } else {
@@ -24,14 +30,14 @@ class FilterByPrice extends React.Component {
     addFilter(event) {
         this.setState({
             [event.target.name]: event.target.value
-        }, this.props.onAddFilter(this.betweenPriceFilter)
+        }, () => this.props.onAddFilter(this.betweenPriceFilter(this.state.from, this.state.to))
         );
     }
 
     removeFilter(event) {
         this.setState({
             [event.target.name]: event.target.value
-        }, this.props.onRemoveFilter(this.betweenPriceFilter)
+        }, () => this.props.onRemoveFilter(this.betweenPriceFilter(this.state.from, this.state.to))
         );
     }
 
