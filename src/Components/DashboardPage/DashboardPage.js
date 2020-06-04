@@ -5,9 +5,10 @@ import PlaceList from '../PlaceList/PlaceList';
 import './dashboardPage.css';
 
 
+
 class DashboardPage extends React.Component {
 
-    defaultFilter = {filterName: 'default', filter: () => true}
+    defaultFilter = {filterName: 'default', filterFunction: () => true}
 
     state = {
         placeList: [],
@@ -44,7 +45,7 @@ class DashboardPage extends React.Component {
     filterByAll(filters) {
         return (place) => {
             return filters.map(filter => {
-                return filter.filter(place)})
+                return filter.filterFunction(place)})
                 .every(result => !!result)
         }
     }
@@ -52,15 +53,14 @@ class DashboardPage extends React.Component {
     render() {
         return (
             <div>
-                <div className="filter-section">
-                    <div className="filter-menu">
+                <div className="filter-menu">
+                    {/* <div className="filter-options"> */}
                         <p>Filter: </p>
+                    {/* </div> */}
+                    <div className="filters">
                         <FilterByPrice onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
                         <FilterByDimension onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
-                        <button className="filter-button">PRICE</button>
-                        <button className="filter-button">DIMENSION</button>
                     </div>
-                    <img src="dashboard-filter-image.png" alt="" className="filter-image" />
                 </div>
                 <PlaceList placeListDetails={this.filteredPlaceList(this.state.filterArray)} />
                 <div className="go-home__section">

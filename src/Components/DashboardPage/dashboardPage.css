@@ -1,21 +1,12 @@
-.filter-section{
-    display: flex;
+.filter-menu{
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem;
-    width: 80%;
-    margin: auto;
-}
-
-.filter-menu{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    padding: 6px 12px;
-    width: 216px;
-    height: 75px;
+    width: 50%;
+    margin: 1rem auto;
+    padding: 12px 26px;
     background: rgba(240, 240, 240, 0.58);
     border-radius: 33px;
+    text-align: left;
 }
 
 .filter-menu p {
@@ -61,4 +52,9 @@
     background: rgba(245, 8, 94, 0.53);
     margin: auto 1rem 2rem 0;
     color: #4F4F4F;
+}
+
+input{
+    width: 30px;
+    margin: 2px;
 }
