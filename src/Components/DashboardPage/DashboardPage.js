@@ -4,7 +4,7 @@ import FilterByPrice from '../Filters/FilterByPrice/FilterByPrice';
 import PlaceList from '../PlaceList/PlaceList';
 import './dashboardPage.css';
 import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
-import { isCompositeComponent } from 'react-dom/test-utils';
+
 
 class DashboardPage extends React.Component {
 
@@ -53,15 +53,14 @@ class DashboardPage extends React.Component {
     render() {
         return (
             <div>
-                <div className="filter-section">
-                    <div className="filter-menu">
+                <div className="filter-menu">
+                    {/* <div className="filter-options"> */}
                         <p>Filter: </p>
+                    {/* </div> */}
+                    <div className="filters">
                         <FilterByPrice onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
                         <FilterByDimension onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
-                        <button className="filter-button">PRICE</button>
-                        <button className="filter-button">DIMENSION</button>
                     </div>
-                    <img src="dashboard-filter-image.png" alt="" className="filter-image" />
                 </div>
                 <PlaceList placeListDetails={this.filteredPlaceList(this.state.filterArray)} />
                 <div className="go-home__section">
