@@ -54,9 +54,7 @@ class DashboardPage extends React.Component {
         return (
             <div>
                 <div className="filter-menu">
-                    {/* <div className="filter-options"> */}
-                        <p>Filter: </p>
-                    {/* </div> */}
+                    <p>Filters</p>
                     <div className="filters">
                         <FilterByPrice onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
                         <FilterByDimension onAddFilter={this.addFilter} onRemoveFilter={this.removeFilter} />
