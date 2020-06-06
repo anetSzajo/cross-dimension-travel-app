@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {betweenDimension} from '../FilteringFunctions.js';
+import {byDimension} from '../FilteringFunctions.js';
 import './filterByDimension.css';
 
 class FilterByDimension extends React.Component{
@@ -11,7 +11,7 @@ class FilterByDimension extends React.Component{
 
     betweenDimensionFilter = (dimension) => {
         return {
-            filterName: 'FilterByDimension', filterFunction: betweenDimension(dimension)
+            filterName: 'FilterByDimension', filterFunction: byDimension(dimension)
         }
     }
 
