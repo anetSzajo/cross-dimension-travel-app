@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {betweenDimension} from '../FilteringFunctions.js';
 import './filterByDimension.css';
 
 class FilterByDimension extends React.Component{
@@ -8,34 +9,32 @@ class FilterByDimension extends React.Component{
         dimension: ''
     }
 
-    dimensionFilter = (place) => place.dimension.toUpperCase().includes(this.state.dimension.toUpperCase());
- 
+    betweenDimensionFilter = (dimension) => {
+        return {
+            filterName: 'FilterByDimension', filterFunction: betweenDimension(dimension)
+        }
+    }
+
     toggleFilter = (event) => {
         this.setState({
             filterToggled: event.target.checked
-        }, this.updateFilter(event))
+        }, () => {
+            if (this.state.filterToggled) {
+                this.props.onAddFilter(this.betweenDimensionFilter(this.state.dimension))
+            } else {
+                this.props.onRemoveFilter(this.betweenDimensionFilter(this.state.dimension))
+            }
+        })
     }
 
     handleDimensionChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
+        }, () => {
+            if (this.state.filterToggled) {
+                this.props.onAddFilter(this.betweenDimensionFilter(this.state.dimension))
+            }
         })
-    }
-
-    updateFilter = (event) => {
-        if (event.target.checked === false) {
-            this.removeFilter()
-        } else {
-            this.addFilter();
-        }
-    }
-
-    addFilter() {
-        this.props.onAddFilter(this.dimensionFilter)
-    }
-
-    removeFilter() {
-        this.props.onRemoveFilter(this.dimensionFilter)
     }
 
     render() {

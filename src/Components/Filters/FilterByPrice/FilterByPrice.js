@@ -1,6 +1,6 @@
 import React from 'react';
-import betweenRange from './Filter';
 
+import {betweenRange} from '../FilteringFunctions';
 import './filterByPrice.css';
 
 class FilterByPrice extends React.Component {
