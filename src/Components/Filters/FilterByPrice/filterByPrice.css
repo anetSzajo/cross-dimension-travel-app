@@ -1,0 +1,11 @@
+.price-filters{
+    display: flex;
+    flex-direction: row;
+    margin: 6px;
+    align-items: center;
+}
+
+label{
+    padding: 2px;
+}
+

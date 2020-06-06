@@ -53,7 +53,7 @@
   "id": 3,
   "name": "Citadel of Ricks",
   "type": "Space station",
-  "dimension": "unknown",
+  "dimension": "Dimension D-111",
   "price": 8,
   "residents": [],
   "url": "https://rickandmortyapi.com/api/location/3",
@@ -176,7 +176,7 @@
   "id": 7,
   "name": "Immortality Field Resort",
   "type": "Resort",
-  "dimension": "unknown",
+  "dimension": "Dimension D-123",
   "price": 99,
   "residents": [
   "https://rickandmortyapi.com/api/character/23",

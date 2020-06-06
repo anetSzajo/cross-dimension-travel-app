@@ -10,14 +10,14 @@
 }
 
 .filter-menu{
-    display: flex;
     flex-direction: row;
-    align-items: baseline;
-    padding: 6px 12px;
-    width: 216px;
-    height: 75px;
+    justify-content: space-between;
+    width: 50%;
+    margin: 1rem auto;
+    padding: 12px 26px;
     background: rgba(240, 240, 240, 0.58);
     border-radius: 33px;
+    text-align: left;
 }
 
 .filter-menu p {
@@ -59,3 +59,8 @@
     margin: auto 0;
 }
 
+
+input{
+    width: 30px;
+    margin: 2px;
+}
