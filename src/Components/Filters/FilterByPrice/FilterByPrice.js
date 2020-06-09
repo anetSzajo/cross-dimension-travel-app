@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {betweenRange} from '../FilteringFunctions';
-import './filterByPrice.css';
+import './filterByPrice.scss';
 
 class FilterByPrice extends React.Component {
 
@@ -46,10 +46,10 @@ class FilterByPrice extends React.Component {
             <div className="price-filters">
                 <input type="checkbox" name="filterToggled" checked={this.state.filterToggled}
                        onChange={this.toggleFilter}/>
-                <label>From: </label>
-                <input type="text" name="from" value={this.state.from} onChange={this.handlePriceChange}/>
-                <label>To: </label>
-                <input type="text" name="to" value={this.state.to} onChange={this.handlePriceChange}/>
+                <label className="filter-label">From: </label>
+                <input type="text" name="from" value={this.state.from} onChange={this.handlePriceChange} className="filter-price-input" />
+                <label className="filter-label">To: </label>
+                <input type="text" name="to" value={this.state.to} onChange={this.handlePriceChange} className="filter-price-input" />
             </div>
 
         )

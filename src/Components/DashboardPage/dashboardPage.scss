@@ -12,9 +12,9 @@
 .filter-menu{
     flex-direction: row;
     justify-content: space-between;
-    width: 50%;
+    width: 65%;
     margin: 1rem auto;
-    padding: 12px 26px;
+    padding: 12px 11px;
     background: rgba(240, 240, 240, 0.58);
     border-radius: 33px;
     text-align: left;
@@ -61,7 +61,7 @@
 }
 
 .go-home-image{
-    width: 258px;
+    width: 220px;
     height: 194px;
     margin: auto 0;
 }
@@ -71,4 +71,14 @@ input{
     width: 30px;
     margin: 2px;
     border-radius: 8px;
+}
+
+@media(min-width: 40rem){
+    .go-home-image{
+        width: 258px;
+    }
+    .filter-menu{
+        width: 50%;
+        padding: 12px 26px;
+    }
 }

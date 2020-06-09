@@ -5,10 +5,10 @@ body{
 }
 
 .about-app{
-    width: 30%;
-    padding: 3rem;
+    width: 60%;
+    padding: 2rem;
     text-align: center;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     background:  rgba(240, 240, 240, 0.58);
     border-radius: 33px;
 }
@@ -24,3 +24,9 @@ body{
     padding: 6px;
 }
 
+@media(min-width: 40rem){
+    .about-app{
+        width: 30%;
+        margin: 1rem auto;
+    }
+}

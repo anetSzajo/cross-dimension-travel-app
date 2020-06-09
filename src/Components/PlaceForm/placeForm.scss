@@ -10,8 +10,8 @@ form {
     border-radius: 33px;
     padding: 3rem;
     text-align: left;
-    width: 30%;
-    margin: 1rem auto;
+    width: 60%;
+    margin: 1rem auto 2rem auto;
     word-break: break-word;
 }
 
@@ -42,4 +42,11 @@ input[type="submit"]{
     background: $button-background;
     border:$button-border;
     color: $button-color;
+}
+
+@media(min-width: 40rem){
+    form{
+        width: 30%;
+        margin: 1rem auto;
+    }
 }

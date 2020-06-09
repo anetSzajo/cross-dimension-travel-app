@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {byDimension} from '../FilteringFunctions.js';
-import './filterByDimension.css';
+import './filterByDimension.scss';
 
 class FilterByDimension extends React.Component{
     state = {
@@ -41,8 +41,8 @@ class FilterByDimension extends React.Component{
         return (
             <div className="dimension-filter">
                 <input type="checkbox" name="filterToggled" checked={this.state.filterToggled} onChange={this.toggleFilter} />
-                <label>Dimension: </label>
-                <input type="text" name="dimension" value={this.state.dimension} onChange={this.handleDimensionChange}  />
+                <label  className="filter-label">Dimension: </label>
+                <input type="text" name="dimension" value={this.state.dimension} onChange={this.handleDimensionChange}  className="filter-input"/>
             </div>
         )
     }

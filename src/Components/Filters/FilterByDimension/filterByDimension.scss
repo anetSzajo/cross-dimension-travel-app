@@ -1,0 +1,32 @@
+.dimension-filter{
+    text-align: left;
+    /*margin: 6px;*/
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+input[type="checkbox"]{
+    width: 30px;
+    margin: 0;
+}
+
+.filter-label{
+    padding: 3px;
+}
+
+.filter-input{
+    width: 5rem;
+    margin: 4px;
+    padding: 3px;
+}
+
+@media(min-width: 40rem){
+    label{
+        padding: 10px;
+    }
+    .dimension-filter{
+        margin: 6px;
+    }
+}
