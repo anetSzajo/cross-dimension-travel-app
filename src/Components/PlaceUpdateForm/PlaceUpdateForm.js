@@ -1,28 +1,32 @@
 import React from "react";
 
-import PlaceCreateForm from "../PlaceCreateForm/PlaceCreateForm";
+import PlaceForm from "../PlaceForm/PlaceForm";
 
 class PlaceUpdateForm extends React.Component {
 
     state = {
-        placeById: {}
+        place: {},
     }
 
     componentDidMount() {
-        const placeId = this.props.match.params.placeid;
-
-        fetch('../database.json')
-            // .then(x => {console.log(x); return x})
+        const placeId = this.props.match.params.id;
+        fetch('../../database.json')
 
             .then(response => response.json())
+            // .then(x => {console.log(x); return x})
             .then(data => this.setState({
-                placeById: data.filter(place => ''+place.id === placeId)[0]
+                place: data.filter(place => ''+place.id === placeId)[0]
             }))
+
+
     }
 
     render(){
+        const {place} = this.state.place;
+        console.log(this.state, 'Update form container')
+
         return(
-            <PlaceCreateForm name={this.state.placeById.name} type={this.state.placeById.type} dimension={this.state.placeById.dimension} price={this.state.placeById.price} residents={[this.state.placeById.residents].length} url={this.state.placeById.url} created={this.state.placeById.created} />
+                <PlaceForm place={place} />
         )
     }
 }
