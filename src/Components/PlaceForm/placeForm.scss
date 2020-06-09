@@ -3,6 +3,7 @@
 h1{
     color: rgba(245, 8, 94, 0.53);
     padding: 8px;
+    border: 2px solid rgba(240, 240, 240, 0.58);
 }
 
 form {
@@ -25,18 +26,18 @@ select{
     margin: 8px auto 2px 12px;
     border: 2px solid rgba(245, 8, 94, 0.53);
     width: -webkit-fill-available;
-    padding: 2px;
+    padding: 7px;
     border-radius: 8px;
 }
 
 .submit-btn--container{
-    width: 30%;
+    width: 40%;
     margin: auto;
 }
 
 input[type="submit"]{
     padding: 6px;
-    margin-top: 1rem;
+    margin: 1rem 0 0 0;
     width: $button-width;
     height: $button-height;
     background: $button-background;
@@ -48,5 +49,8 @@ input[type="submit"]{
     form{
         width: 30%;
         margin: 1rem auto;
+    }
+    input[type="submit"]{
+        margin-top: 1rem;
     }
 }

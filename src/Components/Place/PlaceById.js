@@ -22,7 +22,7 @@ export default class PlaceById extends React.Component {
     render() {
         if (this.state.placeById === undefined){
             return (
-                <h2>'Place not found. Please enter correct place ID.'</h2>
+                <h2>Place not found. Please enter correct place ID.</h2>
             )
         }
         else {
