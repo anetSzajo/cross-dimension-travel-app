@@ -1,12 +1,17 @@
 import React from 'react';
 
+import './placeForm.scss'
+
 class PlaceForm extends React.Component {
 
     constructor(props) {
         super(props);
 
-        console.log(props)
-        if (!props.place) {
+        if (props.place) {
+            this.state = {
+                place: props.place
+            }
+        } else {
             this.state = {
                 place: {
                     name: '',
@@ -18,18 +23,8 @@ class PlaceForm extends React.Component {
                     created: '',
                 }
             }
-
-        } else {
-            this.state = {
-                place: props.place
-            }
         }
-
-
     }
-
-
-
 
     handleInputChange = (event) => {
         this.setState(
@@ -37,7 +32,6 @@ class PlaceForm extends React.Component {
                 place: {
                     [event.target.name]: event.target.value
                 }
-
             }
         )
     }
@@ -47,7 +41,6 @@ class PlaceForm extends React.Component {
             {
                 place: {
                     type: event.target.value
-
                 }
             }
         )
@@ -59,8 +52,10 @@ class PlaceForm extends React.Component {
 
     render() {
         const {place} = this.state;
+
         return (
             <div>
+                <h1>PLACE FORM</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>NAME:
                         <input type="text" name="name" value={place.name} onChange={this.handleInputChange}/>
@@ -92,7 +87,9 @@ class PlaceForm extends React.Component {
                     <label>CREATED:
                         <input type="text" name="created" value={place.created} onChange={this.handleInputChange}/>
                     </label>
-                    <input type="submit" name="submit" value="Submit"/>
+                    <div className="submit-btn--container">
+                        <input type="submit" name="submit" value="Submit"/>
+                    </div>
                 </form>
             </div>
         )

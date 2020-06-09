@@ -18,10 +18,17 @@
     background: rgba(240, 240, 240, 0.58);
     border-radius: 33px;
     text-align: left;
+    border: 2px solid $button-background;
 }
 
 .filter-menu p {
     margin: 6px;
+    font-weight: bold;
+    text-align: center;
+    color: $button-background;
+    border: 2px solid white;
+    padding: 4px;
+    border-radius: 8px;
 }
 
 .filter-button{
@@ -63,4 +70,5 @@
 input{
     width: 30px;
     margin: 2px;
+    border-radius: 8px;
 }

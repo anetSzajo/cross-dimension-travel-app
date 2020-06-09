@@ -1,0 +1,45 @@
+@import '../button.scss';
+
+h1{
+    color: rgba(245, 8, 94, 0.53);
+    padding: 8px;
+}
+
+form {
+    background: rgba(240, 240, 240, 0.58);
+    border-radius: 33px;
+    padding: 3rem;
+    text-align: left;
+    width: 30%;
+    margin: 1rem auto;
+    word-break: break-word;
+}
+
+label{
+    display: block;
+    padding: 10px;
+}
+
+input,
+select{
+    margin: 8px auto 2px 12px;
+    border: 2px solid rgba(245, 8, 94, 0.53);
+    width: -webkit-fill-available;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.submit-btn--container{
+    width: 30%;
+    margin: auto;
+}
+
+input[type="submit"]{
+    padding: 6px;
+    margin-top: 1rem;
+    width: $button-width;
+    height: $button-height;
+    background: $button-background;
+    border:$button-border;
+    color: $button-color;
+}

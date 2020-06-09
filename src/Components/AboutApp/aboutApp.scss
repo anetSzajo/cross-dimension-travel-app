@@ -5,25 +5,22 @@ body{
 }
 
 .about-app{
-    width: 80%;
-    padding: 10px 20px;
-    text-align: justify;
+    width: 30%;
+    padding: 3rem;
+    text-align: center;
     margin: 1rem auto;
     background:  rgba(240, 240, 240, 0.58);
+    border-radius: 33px;
 }
 .about-app h1{
-    text-align: center;
     color: $button-background;
+    padding: 8px;
 }
 
-// .button{
-//     width: $button-width;
-//     height: $button-height;
-//     background: $button-background;
-//     border:$button-border;
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 6px;
+}
 
-//     a{
-//         text-decoration: none;
-//         color: $button-color;
-//     }
-// }
