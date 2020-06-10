@@ -6,41 +6,37 @@ class PlaceForm extends React.Component {
 
     constructor(props) {
         super(props);
-
-        if (props.place) {
-            this.state = {
-                place: props.place
-            }
-        } else {
-            this.state = {
-                place: {
-                    name: '',
-                    type: '',
-                    dimension: '',
-                    price: '',
-                    residents: '',
-                    url: '',
-                    created: '',
-                }
-            }
+        this.state = {
+            place: props.place ? props.place : this.defaultEmptyPlace()
         }
+
     }
 
     handleInputChange = (event) => {
         this.setState(
             {
                 place: {
+                    ...this.state.place,
                     [event.target.name]: event.target.value
                 }
             }
         )
     }
 
+    defaultEmptyPlace = () => ({name: '',
+        type: '',
+        dimension: '',
+        price: '',
+        residents: '',
+        url: '',
+        created: ''})
+
     handleSelectChange = (event) => {
         this.setState(
             {
                 place: {
-                    type: event.target.value
+                    ...this.state.place,
+                    type: event.target.value,
                 }
             }
         )
