@@ -1,10 +1,8 @@
 .dimension-filter{
     text-align: left;
-    /*margin: 6px;*/
     display: flex;
     flex-direction: row;
     align-items: baseline;
-
 }
 
 input[type="checkbox"]{
@@ -28,5 +26,9 @@ input[type="checkbox"]{
     }
     .dimension-filter{
         margin: 6px;
+    }
+    .filter-input{
+        width: 13rem;
+        margin: 0;
     }
 }

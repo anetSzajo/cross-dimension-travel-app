@@ -12,6 +12,7 @@ body{
     background:  rgba(240, 240, 240, 0.58);
     border-radius: 33px;
 }
+
 .about-app h1{
     color: $button-background;
     padding: 8px;
@@ -26,7 +27,6 @@ body{
 
 @media(min-width: 40rem){
     .about-app{
-        width: 30%;
         margin: 1rem auto;
     }
 }

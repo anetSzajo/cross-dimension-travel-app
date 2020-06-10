@@ -10,8 +10,9 @@
 }
 
 .filter-menu{
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 65%;
     margin: 1rem auto;
     padding: 12px 11px;
@@ -19,6 +20,14 @@
     border-radius: 33px;
     text-align: left;
     border: 2px solid $button-background;
+}
+
+.filters{
+    width: 97%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .filter-menu p {
@@ -80,5 +89,11 @@ input{
     .filter-menu{
         width: 50%;
         padding: 12px 26px;
+    }
+    .filters{
+        width: 75%;
+        //display: flex;
+        //flex-direction: column;
+        //align-items: center;
     }
 }

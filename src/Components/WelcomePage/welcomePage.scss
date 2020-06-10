@@ -61,16 +61,26 @@
 
 .home-page img{
     width: 310px;
-    height: 320px;
+    height: 340px;
     border-radius: 23px;
 }
 
 @media(min-width: 40rem){
     .welcome-panel{
-        margin: 2rem auto;
+        margin: 3rem auto 2rem auto;
+        width: 693px;
+        height: 432px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    home-page img{
-        width: 324px;
-        height: 355px;
+    .welcome-panel h1{
+        margin: 3rem auto;
+        width: 27rem;
+        font-size: 40px;
+    }
+    .home-page img{
+        width: 624px;
+        height: 655px;
     }
 }
