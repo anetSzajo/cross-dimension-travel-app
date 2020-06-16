@@ -29,7 +29,7 @@ export default class PlaceById extends React.Component {
             return (
                 <div>
                     <h1>Place with ID #{this.props.match.params.placeid}</h1>
-                    <Place id={ this.state.placeById.id } name={this.state.placeById.name} type={this.state.placeById.type} dimension={this.state.placeById.dimension} price={this.state.placeById.price} residents={[this.state.placeById.residents].length} url={this.state.placeById.url} created={this.state.placeById.created} />
+                    <Place id={ this.state.placeById.id } name={this.state.placeById.name} type={this.state.placeById.type} dimension={this.state.placeById.dimension} price={this.state.placeById.price} url={this.state.placeById.url} created={this.state.placeById.created} />
                 </div>
             )
         }

@@ -11,7 +11,7 @@ function Place(props) {
             <p>TYPE: {props.type}</p>
             <p>DIMENSION: {props.dimension}</p>
             <p>PRICE: {props.price}</p>
-            <p>RESIDENTS: {props.residents}</p>
+            {/*<p>RESIDENTS: {props.residents}</p>*/}
             <p>URL: {props.url}</p>
             <p>CREATED: {props.created}</p>
         </div>

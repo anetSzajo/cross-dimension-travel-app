@@ -18,7 +18,7 @@ class PlaceList extends React.Component {
                             type={place.type}
                             dimension={place.dimension}
                             price={place.price}
-                            residents={place.residents.length}
+                            // residents={place.residents.length}
                             url={place.url}
                             created={place.created}
                         />

@@ -1,10 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+
 import FilterByDimension from '../Filters/FilterByDimension/FilterByDimension';
 import FilterByPrice from '../Filters/FilterByPrice/FilterByPrice';
 import {Link} from 'react-router-dom';
 import PlaceList from '../PlaceList/PlaceList'
 import './dashboardPage.scss';
-
 
 class DashboardPage extends React.Component {
 
@@ -16,11 +17,19 @@ class DashboardPage extends React.Component {
     }
 
     componentDidMount() {
-        fetch('database.json')
-            .then(response => response.json())
-            .then(data => this.setState({
-                placeList: data
-            }))
+    //     // fetch('database.json')
+    //     //     .then(response => response.json())
+    //     //     .then(data => this.setState({
+    //     //         placeList: data
+    //     //     }))
+    //
+    axios.get('http://localhost:5000/places')
+        .then(res => this.setState({
+            placeList: res.data
+        }))
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     addFilter = (filterToAdd) => {
