@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Place from "./Place";
+import axios from "axios";
 
 export default class PlaceById extends React.Component {
     state = {
@@ -10,14 +11,14 @@ export default class PlaceById extends React.Component {
     componentDidMount() {
         const placeId = this.props.match.params.placeid;
 
-        fetch('../database.json')
-            // .then(x => {console.log(x); return x})
-
-            .then(response => response.json())
-            .then(data => this.setState({
-                placeById: data.filter(place => ''+place.id === placeId)[0]
+        axios.get('http://localhost:5000/places')
+            .then(res => this.setState({
+                placeById: res.data.filter(place => ''+place.id === placeId)[0]
             }))
-        }
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     render() {
         if (this.state.placeById === undefined){
