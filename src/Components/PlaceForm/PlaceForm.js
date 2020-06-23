@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import './placeForm.scss'
 
@@ -9,25 +10,38 @@ class PlaceForm extends React.Component {
         this.state = {
             place: props.place ? props.place : this.defaultEmptyPlace()
         }
-
     }
 
     handleInputChange = (event) => {
-        this.setState(
-            {
+        let state;
+        let value = event.target.value;
+        console.log(event.target);
+        if (event.target.type === "number"){
+            console.log("wezlo");
+            state = {
                 place: {
                     ...this.state.place,
-                    [event.target.name]: event.target.value
+                    [event.target.name]: +value
                 }
             }
+        } else {
+            state = {
+                place: {
+                    ...this.state.place,
+                    [event.target.name]: value
+                }
+            };
+        }
+        this.setState(
+            state
         )
     }
 
     defaultEmptyPlace = () => ({name: '',
         type: '',
         dimension: '',
-        price: '',
-        residents: '',
+        price: 0,
+        // residents: '',
         url: '',
         created: ''})
 
@@ -44,6 +58,15 @@ class PlaceForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+
+        const place = this.state.place;
+
+        axios.post('http://localhost:5000/places',
+            {...place},{ headers: { 'Content-Type': 'application/json' } } )
+            .then(res => {
+            console.log(res);
+            console.log(place);
+            })
     }
 
     render() {
@@ -72,10 +95,6 @@ class PlaceForm extends React.Component {
                     </label>
                     <label>PRICE:
                         <input type="number" name="price" value={place.price} onChange={this.handleInputChange}/>
-                    </label>
-                    <label>RESIDENTS:
-                        <input type="text" name="residents" value={place.residents}
-                               onChange={this.handleInputChange}/>
                     </label>
                     <label>URL:
                         <input type="text" name="url" value={place.url} onChange={this.handleInputChange}/>
