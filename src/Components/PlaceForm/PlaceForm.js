@@ -15,9 +15,8 @@ class PlaceForm extends React.Component {
     handleInputChange = (event) => {
         let state;
         let value = event.target.value;
-        console.log(event.target);
+
         if (event.target.type === "number"){
-            console.log("wezlo");
             state = {
                 place: {
                     ...this.state.place,
@@ -41,7 +40,6 @@ class PlaceForm extends React.Component {
         type: '',
         dimension: '',
         price: 0,
-        // residents: '',
         url: '',
         created: ''})
 
