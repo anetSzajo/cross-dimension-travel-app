@@ -59,7 +59,7 @@ class PlaceForm extends React.Component {
 
         const place = this.state.place;
 
-        axios.post('http://localhost:5000/places',
+        axios.post('places',
             {...place},{ headers: { 'Content-Type': 'application/json' } } )
             .then(res => {
             console.log(res);

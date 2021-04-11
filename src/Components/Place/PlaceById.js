@@ -12,7 +12,7 @@ export default class PlaceById extends React.Component {
     componentDidMount() {
         const placeId = this.props.match.params.placeid;
 
-        axios.get(`http://localhost:5000/places/${placeId}`)
+        axios.get(`places/${placeId}`)
             .then(res => this.setState({
                 placeById: res.data
             }))

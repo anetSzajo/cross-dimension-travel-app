@@ -23,7 +23,7 @@ class DashboardPage extends React.Component {
     //     //         placeList: data
     //     //     }))
     //
-    axios.get('http://localhost:5000/places')
+    axios.get('places')
         .then(res => this.setState({
             placeList: res.data
         }))
