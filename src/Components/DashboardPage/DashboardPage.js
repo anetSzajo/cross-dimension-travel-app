@@ -17,12 +17,6 @@ class DashboardPage extends React.Component {
     }
 
     componentDidMount() {
-    //     // fetch('database.json')
-    //     //     .then(response => response.json())
-    //     //     .then(data => this.setState({
-    //     //         placeList: data
-    //     //     }))
-    //
     axios.get('places')
         .then(res => this.setState({
             placeList: res.data
