@@ -3,23 +3,24 @@
 .home-page{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .welcome-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 332px;
     height: 246px;
     margin: 1rem auto;
-    left: 22px;
-    top: 38px;
     background: rgba(240, 240, 240, 0.58);
     border-radius: 33px;
 }
 
 .welcome-panel h1 {
-    width: 293px;
-    height: 132px;
-    left: 40px;
-    top: 65px;
     font-family: $font-family;
     font-style: normal;
     font-weight: normal;
@@ -27,8 +28,6 @@
     line-height: 159.8%;
     padding: 1rem;
     margin-bottom: 0;
-    display: flex;
-    align-items: center;
     text-align: center;
     color: #4F4F4F;
     border: none;
@@ -67,20 +66,17 @@
 
 @media(min-width: 40rem){
     .welcome-panel{
-        margin: 3rem auto 2rem auto;
-        width: 693px;
-        height: 432px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        margin: 2rem auto 2rem auto;
+        width: 35vw;
+        height: 50vh;
     }
     .welcome-panel h1{
-        margin: 3rem auto;
-        width: 27rem;
-        font-size: 40px;
+        font-size: 30px;
+        width: 66%;
     }
     .home-page img{
-        width: 624px;
-        height: 655px;
+        width: 30vw;
+        max-width: 600px;
+        height: 50vh;
     }
 }
