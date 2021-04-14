@@ -1,7 +1,7 @@
 .placeList{
     display: flex;
     flex-direction: column;
-    width: 35vw;
+    width: 85vw;
     margin: auto;
 }
 
